@@ -1,10 +1,10 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const { MongoClient } = require('mongodb');
-const app = express();
+var express = require('express');
+var bodyParser = require('body-parser');
+var { MongoClient } = require('mongodb');
+var app = express();
 
-const port = process.env.PORT || 3080;
-const dbURI = 'mongodb://localhost:27017/bookstore'; 
+var port = process.env.PORT || 3080;
+var dbURI = 'mongodb://localhost:27017/bookstore'; 
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
   });
   
   app.post('/place-order', (req, res) => {
-    const { name, studentId, items } = req.body;
+    var { name, studentId, items } = req.body;
   
     
   
