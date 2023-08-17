@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Orders</title>
+ 
+</head>
+<body>
+  <h1>View Orders</h1>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Student ID</th>
+      <th>Items</th>
+      <th>Sub Total</th>
+      <th>Tax</th>
+      <th>Total</th>
+    </tr>
+    <% orders.forEach(order => { %>
+      <tr>
+        <td><%= order.name %></td>
+        <td><%= order.studentId %></td>
+        <td>
+          <ul>
+            <% order.items.forEach(item => { %>
+              <li><%= item %></li>
+            <% }) %>
+          </ul>
+        </td>
+        <td>$<%= order.subTotal.toFixed(2) %></td>
+        <td>$<%= order.tax.toFixed(2) %></td>
+        <td>$<%= order.total.toFixed(2) %></td>
+      </tr>
+    <% }) %>
+  </table>
+</body>
+</html>
