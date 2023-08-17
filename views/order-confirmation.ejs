@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation</title>
+ 
+</head>
+<body>
+  <h1>Order Confirmation</h1>
+  <h2>Thank you for your order, <%= order.name %>!</h2>
+  <p>Student ID: <%= order.studentId %></p>
+  <p>Ordered Items:</p>
+  <ul>
+    <% order.items.forEach(item => { %>
+      <li><%= item %></li>
+    <% }) %>
+  </ul>
+  <p>Sub Total: $<%= order.subTotal.toFixed(2) %></p>
+  <p>Alberta Tax (5%): $<%= order.tax.toFixed(2) %></p>
+  <p>Total Cost: $<%= order.total.toFixed(2) %></p>
+</body>
+</html>
