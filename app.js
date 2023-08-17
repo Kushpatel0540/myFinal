@@ -30,10 +30,10 @@ app.get('/', (req, res) => {
   app.post('/place-order', (req, res) => {
     const { name, studentId, items } = req.body;
   
-    // Calculate order details (subTotal, tax, total)
-    const subTotal = 0; // Calculate the subTotal
-    const tax = 0;     // Calculate the tax
-    const total = 0;    // Calculate the total
+    
+    const subTotal = 0; 
+    const tax = 0;     
+    const total = 0;    
   
     const orderDetails = {
       name,
@@ -44,9 +44,8 @@ app.get('/', (req, res) => {
       total
     };
   
-    // Insert the order into the database
-    // ...
+    
   
-    res.render('order-confirmation', { orderDetails }); // Pass orderDetails
+    res.render('order-confirmation', { orderDetails }); 
   });
   
